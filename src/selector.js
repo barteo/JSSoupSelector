@@ -155,7 +155,7 @@ class SimpleSelector {
   
   getNext(expression, start) {
     var sub = expression.slice(start + 1);
-    var end = sub.search(/\W/g); // end is index of sub
+    var end = sub.search(/[^A-Za-z0-9_-]/g); // end is index of sub
     if (end == -1) {
       end = sub.length
     }

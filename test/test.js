@@ -21,7 +21,7 @@ const data = `
   ...
   <span class="two four" id="id2">Two</span>
   <span class="three four" id="id3" title2="title">Three</span>
-  <span class="one two three four" id="id4">One Two Three</span>
+  <span class="one two three-3 four" id="id4">One Two Three</span>
 
   <div class=" whitespace">Whitespace Left</div>
   <div class="whitespace ">Whitespace Right</div>
@@ -173,7 +173,7 @@ describe('should work well for simple selector', function() {
     it('should be OK', function() {
       var ss = new SoupSelector(new JSSoupAdapter());
       var soup = new JSSoup(data);
-      var b = ss.select("span.one.two.three", soup)
+      var b = ss.select("span.one.two.three-3", soup)
       assert.equal(1, b.length);
       assert.equal("One Two Three", b[0].text);
     });
